@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Button = () => {
+type ButtonProps = {
+    text : string
+}
+export const Button = ({text}:ButtonProps) => {
   return (
-    <div className='text-blue-500'>Button</div>
+    <div className='text-blue-900'>{text}</div>
   )
 }
-
-export default Button
