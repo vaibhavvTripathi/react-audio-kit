@@ -15,6 +15,24 @@ export const scrollToActiveLyric = (
     }
   }
 };
+export const isActiveElementInViewport = (
+  containerRef: React.RefObject<HTMLDivElement>,
+  activeLyric: number
+): boolean => {
+  const container = containerRef.current;
+  if (!container) return false;
+  const activeElement = container.childNodes[activeLyric] as HTMLElement;
+  if (!activeElement) return false;
+  const containerRect = container.getBoundingClientRect();
+  const elementRect = activeElement.getBoundingClientRect();
+
+  return (
+    elementRect.top >= containerRect.top &&
+    elementRect.left >= containerRect.left &&
+    elementRect.bottom <= containerRect.bottom &&
+    elementRect.right <= containerRect.right
+  );
+};
 export const getPrefixSum = (arr: Array<number>) => {
   const prefixSum: Array<number> = [];
   arr.forEach((n, i) => {

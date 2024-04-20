@@ -1,21 +1,21 @@
 import { useEffect, useRef } from "react";
-import {
-  scrollToActiveLyric,
-} from "./utills";
-import { LyricsPropType } from "./types";
 import { useActiveLyricIndex } from "./hooks";
+import { LyricsPropType } from "./types";
+import { isActiveElementInViewport, scrollToActiveLyric } from "./utills";
 
 export const Lyrics = ({ lyrics, hasStarted, height }: LyricsPropType) => {
   const activeLyric = useActiveLyricIndex({ lyrics, hasStarted });
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    scrollToActiveLyric(containerRef, activeLyric);
-  }, [activeLyric]); // Trigger effect when activeLyric changes
+    if (isActiveElementInViewport(containerRef, activeLyric)) {
+      scrollToActiveLyric(containerRef, activeLyric);
+    }
+  }, [activeLyric]);
   return (
     <div
       ref={containerRef}
-      className={` flex items-center flex-col gap-5 hide-scroll overflow-y-scroll`}
+      className={` flex items-center flex-col gap-5 hide-scroll overflow-y-scroll fade-top fade-bottom`}
       style={{ height: height }}
     >
       {lyrics.map((item, index) => {
