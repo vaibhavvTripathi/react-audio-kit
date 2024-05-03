@@ -65,7 +65,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audios }) => {
           <h6 className="mt-1">{progressToDurationCoverter(100)}</h6>
         </div>
         <div className="p-2 flex justify-between items-center pb-5">
-          <div className="basis-52  flex items-center gap-2">
+          <div className="basis-52  flex items-center gap-4">
             <img
               src={audios[currentPlaybackState.activeIndex].img ?? disc}
               className="block h-20 w-20"
