@@ -15,7 +15,7 @@ export const Lyrics = ({ lyrics, hasStarted, height }: LyricsPropType) => {
   return (
     <div
       ref={containerRef}
-      className={` flex items-center flex-col gap-5 hide-scroll overflow-y-scroll fade-top fade-bottom`}
+      className={` flex items-center border flex-col gap-5 hide-scroll overflow-y-scroll fade-top fade-bottom`}
       style={{ height: height }}
     >
       {lyrics.map((item, index) => {

@@ -10,7 +10,7 @@ export const scrollToActiveLyric = (
       const containerHeight = containerRef.current.clientHeight;
       const activeDivHeight = activeDiv.clientHeight;
       const scrollTop =
-        activeDiv.offsetTop - (containerHeight - activeDivHeight) / 2;
+        activeDiv.offsetTop - (containerHeight - activeDivHeight) /2;
       containerRef.current.scrollTo({ top: scrollTop, behavior: "smooth" });
     }
   }

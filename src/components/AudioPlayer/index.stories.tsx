@@ -1,13 +1,15 @@
-import React from "react";
-import { StoryFn, Meta } from "@storybook/react";
-import AudioPlayer, { AudioPlayerProps } from "../AudioPlayer/index"; // adjust the path based on your project structure
+import type { Meta, StoryObj } from "@storybook/react";
+import AudioPlayer from ".";
 import ncs from "../../ncs.mp3";
-export default {
+
+const meta: Meta<typeof AudioPlayer> = {
   title: "Components/AudioPlayer",
   component: AudioPlayer,
-} as Meta;
-
-const Template: StoryFn<AudioPlayerProps> = (args) => <AudioPlayer {...args} />;
+  parameters: {
+    layout: "centered",
+  },
+  tags: ["autodocs"],
+};
 
 const audioData = [
   {
@@ -42,8 +44,12 @@ const audioData = [
   },
 ];
 
-export const Default = Template.bind({});
-Default.args = {
-  audios: audioData,
-  activeAudioIndex: 0, // Index of the initially active audio
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    audios: audioData,
+  },
 };
+
+export default meta;
