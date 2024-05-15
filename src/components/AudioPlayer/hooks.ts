@@ -11,7 +11,6 @@ export const useBufferedAudioPercentage = (
     const interval = setInterval(() => {
       const bufferedPercentage = getBufferedProgressFromCurrentTime(audioRef);
       if (loadedPercentage !== bufferedPercentage) {
-        console.log(bufferedPercentage);
         setLoadedPercentage(bufferedPercentage);
       }
     }, 1000);
@@ -20,11 +19,10 @@ export const useBufferedAudioPercentage = (
   return loadedPercentage;
 };
 
-const defaultPlayback = {
+const fallbackPlaybackState: CurrentPlaybackStateType = {
   progress: 0,
   isPlaying: false,
   volume: 1,
-  speedFactor: 1,
   activeIndex: 0,
   loading: true,
   isError: false,
@@ -32,10 +30,16 @@ const defaultPlayback = {
 };
 export const useCurrentPLayback = (
   audioRef: React.RefObject<HTMLAudioElement>,
-  audios: Array<Audio>
+  audios: Array<Audio>,
+  defaultPlayback?: CurrentPlaybackStateType
 ) => {
   const [currentPlaybackState, setCurrentPlaybackState] =
-    useState<CurrentPlaybackStateType>(defaultPlayback);
+    useState<CurrentPlaybackStateType>(
+      defaultPlayback ?? fallbackPlaybackState
+    );
+  useEffect(() => {
+    setCurrentPlaybackState(defaultPlayback ?? fallbackPlaybackState);
+  }, [audios]);
   const bufferedPercentage = useBufferedAudioPercentage(audioRef);
   const [fallbackVolume, setFallbackVolume] = useState<number>(1);
   useEffect(() => {
@@ -194,6 +198,6 @@ export const useCurrentPLayback = (
     currentPlaybackState,
     handleError,
     toggleVolume,
-    toggleLoop
+    toggleLoop,
   };
 };

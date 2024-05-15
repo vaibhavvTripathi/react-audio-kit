@@ -8,7 +8,6 @@ export type CurrentPlaybackStateType = {
   progress: number;
   isPlaying: boolean;
   volume: number;
-  speedFactor: number;
   activeIndex: number;
   loading: boolean;
   isError: boolean;

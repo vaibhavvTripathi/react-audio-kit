@@ -11,7 +11,7 @@ export const ActionButton = ({
   children: ReactNode;
   onAction?: () => void;
   disabled?: boolean;
-  actionButtonColor?: { base: string; hovered: string };
+  actionButtonColor?: { base?: string; hovered?: string };
   padding?: number;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -44,13 +44,14 @@ export const ActionButton = ({
     </button>
   );
 };
-export const PlayIcon = () => {
+export const PlayIcon = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="w-6 h-6 "
+      className="w-5 h-5 "
+      style={{ color: color ?? "white" }}
     >
       <path
         fillRule="evenodd"
@@ -60,7 +61,7 @@ export const PlayIcon = () => {
     </svg>
   );
 };
-export const PauseIcon = () => {
+export const PauseIcon = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +69,8 @@ export const PauseIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-5 h-5"
+      style={{ color: color ?? "white" }}
     >
       <path
         strokeLinecap="round"
@@ -78,7 +80,7 @@ export const PauseIcon = () => {
     </svg>
   );
 };
-export const PrevIcon = () => {
+export const PrevIcon = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +88,8 @@ export const PrevIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-5 h-5"
+      style={{ color: color ?? "white" }}
     >
       <path
         strokeLinecap="round"
@@ -96,7 +99,7 @@ export const PrevIcon = () => {
     </svg>
   );
 };
-export const ForwardIcon = () => {
+export const ForwardIcon = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +107,8 @@ export const ForwardIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-5 h-5"
+      style={{ color: color ?? "white" }}
     >
       <path
         strokeLinecap="round"
@@ -115,7 +119,7 @@ export const ForwardIcon = () => {
   );
 };
 
-export const QueueIcon = () => {
+export const QueueIcon = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +127,7 @@ export const QueueIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-5 h-5"
     >
       <path
         strokeLinecap="round"
@@ -133,15 +137,16 @@ export const QueueIcon = () => {
     </svg>
   );
 };
-export const ErrorIcon = () => {
+export const ErrorIcon = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      style={{ color: color ?? "white" }}
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-6 h-6"
+      className="w-5 h-5"
     >
       <path
         strokeLinecap="round"
@@ -151,12 +156,13 @@ export const ErrorIcon = () => {
     </svg>
   );
 };
-export const Loader = () => {
+export const Loader = ({ color }: { color?: string }) => {
   return (
     <div role="status">
       <svg
         aria-hidden="true"
-        className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-100 fill-blue-600"
+        className="w-5 h-5 text-gray-200 animate-spin dark:text-gray-100 "
+        style={{ fill: color ?? "grey" }}
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -174,75 +180,84 @@ export const Loader = () => {
     </div>
   );
 };
-export const VolumeActive = () => {
+export const VolumeActive = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
-      className="w-5 h-5 text-gray-800"
+      className="w-4 h-4 "
+      style={{ color: color ?? "black" }}
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
       />
     </svg>
   );
 };
 
-export const LoopIcon = () => {
+export const LoopIcon = ({
+  color,
+  opacity,
+}: {
+  color?: string;
+  opacity?: number;
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
-      className="w-5 h-5 text-gray-900"
+      className="w-4 h-4 "
+      style={{ color: color ?? "black", opacity: opacity ?? 1 }}
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
       />
     </svg>
   );
 };
 
-export const LoopIconFaded = () => {
+export const LoopIconFaded = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
-      className="w-5 h-5 text-gray-400"
+      className="w-4 h-4 text-gray-400"
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
       />
     </svg>
   );
 };
-export const VolumeInactive = () => {
+export const VolumeInactive = ({ color }: { color?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      stroke-width="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
-      className="w-5 h-5 text-gray-800"
+      className="w-4 h-4 "
+      style={{ color: color ?? "black" }}
     >
       <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
       />
     </svg>

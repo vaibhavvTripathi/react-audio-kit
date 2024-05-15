@@ -14,7 +14,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-
+    color: {
+      base: "#FF69B4",
+      hover: "#FF1493",
+      auora: "#FFC0CB",
+      iconColor: "#FFFFFF",
+      
+    },
   },
 };
 

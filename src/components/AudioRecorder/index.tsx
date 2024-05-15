@@ -8,7 +8,7 @@ import {
 } from "./childComponents";
 import { useAudioAnalyser, useDecibles } from "./hooks";
 
-export type AudioRecorderPropsType = {
+type AudioRecorderPropsType = {
   getAudioBlobOnStop?: (audioBlob: Blob) => void;
   getCurrentAudioBlobPacket?: (audioBlob: Blob) => void;
   handleError?: (error: any) => void;
