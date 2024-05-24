@@ -121,7 +121,7 @@ export const AudioPlayer = ({
             {!hideImg && (
               <img
                 src={audios[currentPlaybackState.activeIndex].img ?? disc}
-                className="block  xs:h-5 sm:h-12 sm:w-12 md:h-24 md:w-24 lg:h-12 lg:w-12 xl:h-32 xl:w-16"
+                className="block h-12 w-12 "
                 style={{
                   borderRadius: "10px",
                   cursor: onClickImage ? "pointer" : "default",
@@ -133,7 +133,7 @@ export const AudioPlayer = ({
             {!hideAudioName && (
               <div>
                 <h3
-                  className="sm:text-sm md:text-xl lg:text-sm xl:text-3xl w-24 truncate"
+                  className=" text-sm  truncate"
                   style={{
                     color: `${theme?.text ?? "black"}`,
                     cursor: onClickTitle ? "pointer" : "default",
@@ -150,7 +150,7 @@ export const AudioPlayer = ({
                       .split(".")[0]}
                 </h3>
                 <h6
-                  className="text-sm md:text-base lg:text-xs xl:text-xl w-20 truncate "
+                  className="text-xs w-20 truncate "
                   style={{
                     color: `${theme?.text ?? "black"}`,
                     opacity: 0.7,
