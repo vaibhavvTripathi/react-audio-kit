@@ -26,14 +26,16 @@ export const useDecibles = (
 };
 
 export const useAudioAnalyser = (
-  mediaRecorderRef: React.MutableRefObject<MediaRecorder | null>
+  mediaRecorderRef: React.MutableRefObject<MediaRecorder | null>,
+  isRecording: Boolean
 ) => {
   const [audioAnalyser, setAudioAnalyser] = useState<AnalyserNode | null>(null);
   const [audioContext, setAudioContext] = useState<AudioContext | null>(null);
   useEffect(() => {
+    if (!isRecording) return;
     const audioCtx = new AudioContext();
     setAudioContext(audioCtx);
-  }, []);
+  }, [isRecording]);
   useEffect(() => {
     if (audioContext && mediaRecorderRef.current?.stream) {
       const analyser = audioContext.createAnalyser();

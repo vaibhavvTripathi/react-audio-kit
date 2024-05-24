@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import AudioPlayer from ".";
+import {AudioPlayer} from ".";
 import ncs from "../../ncs.mp3";
 
 const meta: Meta<typeof AudioPlayer> = {
@@ -17,27 +17,27 @@ const audioData = [
     img: undefined,
     subheading: "Subtitle 2",
   },
-  {
-    src: "https://ucarecdn.com/92025d67-677-4148-8284-2d7e03306d4c/detroitkeys.mp3",
-    img: "https://sm.mashable.com/t/mashable_in/photo/default/arijit-singh-copy_ddzh.1248.jpg",
-    subheading: "Subtitle 1",
-  },
-  {
-    src: ncs,
-    img: "https://i.ndtvimg.com/i/2015-07/aa_640x480_81435810676.jpg",
+  // {
+  //   src: "https://ucarecdn.com/92025d67-677-4148-8284-2d7e03306d4c/detroitkeys.mp3",
+  //   img: "https://sm.mashable.com/t/mashable_in/photo/default/arijit-singh-copy_ddzh.1248.jpg",
+  //   subheading: "Subtitle 1",
+  // },
+  // {
+  //   src: ncs,
+  //   img: "https://i.ndtvimg.com/i/2015-07/aa_640x480_81435810676.jpg",
 
-    subheading: "Subtitle 3",
-  },
-  {
-    src: ncs,
-    img: "https://static.toiimg.com/thumb/msid-53685247,width-400,resizemode-4/53685247.jpg",
+  //   subheading: "Subtitle 3",
+  // },
+  // {
+  //   src: ncs,
+  //   img: "https://static.toiimg.com/thumb/msid-53685247,width-400,resizemode-4/53685247.jpg",
 
-    subheading: "Subtitle 4",
-  },
-  {
-    src: ncs,
-    img: "https://m.media-amazon.com/images/M/MV5BMTNmMTQ2YzMtYzU0MS00NTI2LTk3MTgtOTI5MDgyNDc3ZDFkXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
-  },
+  //   subheading: "Subtitle 4",
+  // },
+  // {
+  //   src: ncs,
+  //   img: "https://m.media-amazon.com/images/M/MV5BMTNmMTQ2YzMtYzU0MS00NTI2LTk3MTgtOTI5MDgyNDc3ZDFkXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+  // },
 ];
 
 type Story = StoryObj<typeof meta>;

@@ -50,7 +50,7 @@ export const Default: Story = {
   args: {
     lyrics: dummyLyrics,
     hasStarted:true,
-    height:"13em"
+    height:"5em"
   },
 };
 

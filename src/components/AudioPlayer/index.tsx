@@ -6,7 +6,6 @@ import {
   ForwardIcon,
   Loader,
   LoopIcon,
-  LoopIconFaded,
   PauseIcon,
   PlayIcon,
   PrevIcon,
@@ -15,8 +14,8 @@ import {
 } from "./childComponents";
 import { useCurrentPLayback } from "./hooks";
 import { Audio, CurrentPlaybackStateType } from "./types";
-
-export interface AudioPlayerProps {
+import "../../index.css";
+interface AudioPlayerProps {
   audios: Array<Audio>;
   getCurrentPlayback?: (
     currentPlayback: CurrentPlaybackStateType & {
@@ -48,7 +47,7 @@ type Theme = {
   shadow?: boolean;
 };
 
-const AudioPlayer = ({
+export const AudioPlayer = ({
   audios,
   getCurrentPlayback,
   defaultPlayback,
@@ -86,6 +85,11 @@ const AudioPlayer = ({
       });
     }
   }, [currentPlaybackState, bufferedPercentage]);
+  if (audios.length === 0) {
+    return (
+      <div className="mx-auto">{"Uh..ohh no media files present :("} </div>
+    );
+  }
   return (
     <>
       <div
@@ -167,6 +171,7 @@ const AudioPlayer = ({
                 hovered: theme?.hoveredMediaButtonColor,
               }}
               onAction={goPrev}
+              disabled={audios.length <= 1}
             >
               <PrevIcon color={theme?.mediaIconColor} />
             </ActionButton>
@@ -194,6 +199,7 @@ const AudioPlayer = ({
                 hovered: theme?.hoveredMediaButtonColor,
               }}
               onAction={goFwd}
+              disabled={audios.length <= 1}
             >
               <ForwardIcon color={theme?.mediaIconColor} />
             </ActionButton>
@@ -288,5 +294,3 @@ const AudioPlayer = ({
     </>
   );
 };
-
-export default AudioPlayer;

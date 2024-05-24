@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   ActionButton,
   MicOffIcon,
@@ -7,7 +7,7 @@ import {
   Tick,
 } from "./childComponents";
 import { useAudioAnalyser, useDecibles } from "./hooks";
-
+import "../../index.css";
 type AudioRecorderPropsType = {
   getAudioBlobOnStop?: (audioBlob: Blob) => void;
   getCurrentAudioBlobPacket?: (audioBlob: Blob) => void;
@@ -28,7 +28,7 @@ type Color = {
   iconColor?: string;
 };
 
-const AudioRecorder = ({
+export const AudioRecorder = ({
   getAudioBlobOnStop,
   getCurrentAudioBlobPacket,
   handleError,
@@ -44,9 +44,9 @@ const AudioRecorder = ({
   const [isPaused, setIsPaused] = useState(false);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Array<Blob>>([]);
-  const audioAnalyser = useAudioAnalyser(mediaRecorderRef);
+  const audioAnalyser = useAudioAnalyser(mediaRecorderRef,isRecording);
   const averageDecibels = useDecibles(audioAnalyser, isRecording);
-
+  console.log(isRecording, isPaused,averageDecibels);
   const handleStartRecording = () => {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
@@ -174,5 +174,3 @@ const AudioRecorder = ({
     </div>
   );
 };
-
-export default AudioRecorder;

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useActiveLyricIndex } from "./hooks";
 import { LyricsPropType } from "./types";
 import { isActiveElementInViewport, scrollToActiveLyric } from "./utills";
+import "../../index.css"
 
 export const Lyrics = ({ lyrics, hasStarted, height }: LyricsPropType) => {
   const activeLyric = useActiveLyricIndex({ lyrics, hasStarted });

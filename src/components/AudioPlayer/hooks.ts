@@ -154,9 +154,13 @@ export const useCurrentPLayback = (
 
       if (calculatedProgress === 100) {
         if (!currentPlaybackState.looped) goFwd();
-        else {
+        else if (audios.length - 1 !== currentPlaybackState.activeIndex) {
           audioRef.current.currentTime = 0;
           audioRef.current.play();
+        } else {
+          setCurrentPlaybackState((prev) => {
+            return { ...prev, isPlaying: false };
+          });
         }
       }
     }
