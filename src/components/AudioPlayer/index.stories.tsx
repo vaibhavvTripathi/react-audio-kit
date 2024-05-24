@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {AudioPlayer} from ".";
-import ncs from "../../ncs.mp3";
+// import ncs from "../../ncs.mp3";
 
 const meta: Meta<typeof AudioPlayer> = {
   title: "Components/AudioPlayer",

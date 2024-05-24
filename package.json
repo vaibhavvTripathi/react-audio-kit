@@ -1,6 +1,6 @@
 {
   "name": "react-audio-kit",
-  "version": "0.1.16",
+  "version": "0.1.18",
   "description": "A UI library for audio components in React",
   "type": "module",
   "files": [
@@ -15,7 +15,7 @@
     },
     "./style.css": "./dist/style.css"
   },
-  "types": "./dist/index.d.ts",  
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

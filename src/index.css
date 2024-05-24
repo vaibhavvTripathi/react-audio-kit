@@ -15,3 +15,23 @@
 .transition-scale {
   transition: transform 0.3s ease;
 }
+.customSlider[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: var(--thumb-color, #1c0187); /* Default color */
+}
+
+.customSlider[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background-color: var(--thumb-color, #1c0187); /* Default color */
+  cursor: pointer;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}

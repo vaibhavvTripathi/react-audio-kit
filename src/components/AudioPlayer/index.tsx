@@ -94,7 +94,12 @@ export const AudioPlayer = ({
     <>
       <div
         className={`audio-player  relative ${theme?.shadow && "shadow-md"}`}
-        style={{ borderRadius: `${borderRadius ?? 0}px` }}
+        style={
+          {
+            borderRadius: `${borderRadius ?? 0}px`,
+            "--thumb-color": theme?.hoveredMediaButtonColor,
+          } as any
+        }
       >
         <div className="cursor-pointer">
           <input
@@ -267,30 +272,6 @@ export const AudioPlayer = ({
           onLoadedData={handleLoading}
         />
       </div>
-      <style>
-        {`
-          .customSlider[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 10px;
-            height: 10px;
-            cursor: pointer;
-            border-radius: 100%;
-            background-color: ${theme?.hoveredMediaButtonColor ?? "blue"};
-          }
-
-          .customSlider[type="range"]::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            background-color: ${theme?.hoveredMediaButtonColor ?? "blue"};
-            cursor: pointer;
-          }
-          
-          input[type="range"]:focus {
-            outline: none;
-        }
-        `}
-      </style>
     </>
   );
 };
