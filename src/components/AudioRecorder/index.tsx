@@ -44,9 +44,9 @@ export const AudioRecorder = ({
   const [isPaused, setIsPaused] = useState(false);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Array<Blob>>([]);
-  const audioAnalyser = useAudioAnalyser(mediaRecorderRef,isRecording);
+  const audioAnalyser = useAudioAnalyser(mediaRecorderRef, isRecording);
   const averageDecibels = useDecibles(audioAnalyser, isRecording);
-  console.log(isRecording, isPaused,averageDecibels);
+  console.log(isRecording, isPaused, averageDecibels);
   const handleStartRecording = () => {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
@@ -114,7 +114,7 @@ export const AudioRecorder = ({
       setIsPaused(false);
     }
   };
-
+  console.log(senstivity);
   return (
     <div>
       <div className="flex flex-col items-center gap-2">
@@ -122,9 +122,9 @@ export const AudioRecorder = ({
           {isRecording ? (
             <div className="flex gap-2">
               {!isPaused ? (
-                <div className="flex items-center justify-center mx-10">
+                <div className="flex items-center justify-center mx-10 border relative">
                   <div
-                    className="rounded-full fixed"
+                    className="rounded-full absolute z-20"
                     style={{
                       padding: `calc( ${Math.min(((averageDecibels ?? 0) * (senstivity ?? 1)) / 5, 25)}px)`,
                       transition: "padding 0.1s ease-in-out",

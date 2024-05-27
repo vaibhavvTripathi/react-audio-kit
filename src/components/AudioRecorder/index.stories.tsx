@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {AudioRecorder} from ".";
+import { AudioRecorder } from ".";
 
 const meta: Meta<typeof AudioRecorder> = {
   title: "Components/AudioRecorder",
@@ -14,7 +14,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
- 
+    senstivity: 10,
   },
 };
 
