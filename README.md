@@ -1,3 +1,8 @@
+
+# Project Title
+
+A brief description of what this project does and who it's for
+
 # react-audio-kit
 
 react-audio-kit is a react ui library that contains the web based audio components in a well abstracted form.
@@ -47,7 +52,7 @@ This component provides you a simplest way to handle your playlists and gives yo
 
 By default, this queue-player takes the list of audios to play and internally manages the states of the queue.
 
-```bash
+```javascript
 import { AudioPlayer } from "react-audio-kit"; // import the component from library
 import "react-audio-kit/style.css"; // don't forget to import the styles from the library
 
@@ -92,7 +97,7 @@ You can customize and use the AudioPlayer using following props :
 | `onClickSubtitle`    | `() => void`                                                                                    | A callback function triggered when the audio subtitle is clicked.                                         | -        |
 | `borderRadius`       | `number`                                                                                        | Sets the border radius of the audio player.                                                               | -        |
 
-### Theme
+#### Theme
 
 The `theme` object allows customization of the audio player's appearance:
 
@@ -109,8 +114,7 @@ The `theme` object allows customization of the audio player's appearance:
 | `controlButtonIconColor`    | `string`  | Color of the control button icons.                    | -       |
 | `shadow`                    | `boolean` | If true, applies a shadow effect to the audio player. | `false` |
 
-### Audio
-
+#### Audio
 | Property     | Type     | Description                                                |
 | ------------ | -------- | ---------------------------------------------------------- |
 | `src`        | `string` | Address for the audio file                                 |
@@ -118,7 +122,7 @@ The `theme` object allows customization of the audio player's appearance:
 | `heading`    | `string` | Title of the audio file                                    |
 | `subheading` | `string` | Subtitle of the audio file                                 |
 
-### CurrentPlaybackStateType
+#### CurrentPlaybackStateType
 
 | Property      | Type      | Description                                             |
 | ------------- | --------- | ------------------------------------------------------- |
@@ -129,3 +133,82 @@ The `theme` object allows customization of the audio player's appearance:
 | `loading`     | `boolean` | Whether the audio is currently loading                  |
 | `isError`     | `boolean` | Whether there was an error during playback              |
 | `looped`      | `boolean` | Whether the audio is set to loop                        |
+
+### Audio Recorder :
+
+This component provides you a simplest way to your own voice in a well abstracted manner :
+
+- Pause/ Resume/ Start recording
+- Custom theming
+- Getting audio blobs in certain time intervals
+- Loudness indicators
+- Senstivity management
+
+#### Preview
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+#### Usage
+
+By default, audio recorder do not require any props. 
+
+```javascript 
+import { AudioRecorder } from "react-audio-kit"; // import the components from library
+import "react-audio-kit/style.css"; // don't forget to import the styles from the library
+
+export default function Home() {
+  return (
+    <>
+      <AudioRecorder />
+    </>
+  );
+}
+```
+
+The `AudioRecorder` component is a customizable audio recording utility with various event handlers and configurable properties. This document details the properties that can be passed to the component.
+
+#### API
+
+| Prop Name                    | Type                                      | Description                                                                                       |
+|------------------------------|-------------------------------------------|---------------------------------------------------------------------------------------------------|
+| `getAudioBlobOnStop`         | `(audioBlob: Blob) => void`               | Callback function that receives the final audio `Blob` when the recording stops.                  |
+| `getCurrentAudioBlobPacket`  | `(audioBlob: Blob) => void`               | Callback function that receives the current audio `Blob` packets during recording.                |
+| `handleError`                | `(error: any) => void`                    | Callback function that handles any errors that occur during the recording process.                |
+| `timeSlice`                  | `number`                                  | Optional parameter specifying the time interval (in milliseconds) at which audio packets are delivered. |
+| `onPause`                    | `() => void`                              | Callback function called when the recording is paused.                                            |
+| `onRecord`                   | `() => void`                              | Callback function called when the recording starts.                                               |
+| `onResume`                   | `() => void`                              | Callback function called when the recording resumes after being paused.                           |
+| `onStop`                     | `() => void`                              | Callback function called when the recording stops.                                                |
+| `sensitivity`                | `number`                                  | Optional parameter setting the microphone sensitivity.                                            |
+| `color`                      | `Color`                                   | Object to customize the color scheme of the audio recorder UI.                                    |
+
+#### Color 
+
+| Property Name  | Type   | Description                                       |
+|----------------|--------|---------------------------------------------------|
+| `base`         | `string` | Base color for the audio recorder interface.      |
+| `hover`        | `string` | Color used when elements are hovered over.        |
+| `auora`        | `string` | Additional accent color for special UI elements.  |
+| `iconColor`    | `string` | Color for icons within the audio recorder interface. |
+
+
+### Contributing
+
+Provide guidelines for contributing to the library.
+
+```markdown
+## Contributing
+
+We welcome contributions! Please follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b my-feature-branch`.
+3. Make your changes and commit them: `git commit -m 'Add new feature'`.
+4. Push to the branch: `git push origin my-feature-branch`.
+5. Submit a pull request.
+```
+
+
+## License
+
+This project is licensed under the MIT License.
