@@ -151,14 +151,11 @@ This component provides you a simplest way to your own voice in a well abstracte
 
 #### Preview
 
-Stopped Recording
 ![App Screenshot](./src/assets/recorder_stopped.png)
 
-Recording
 ![App Screenshot](./src/assets/recorder_recording.png)
 
-Paused
-![App Screenshot](./src/assets/recorder_recording.png)
+![App Screenshot](./src/assets/recorder_paused.png)
 
 #### Usage
 
