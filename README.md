@@ -1,8 +1,3 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
 # react-audio-kit
 
 react-audio-kit is a react ui library that contains the web based audio components in a well abstracted form.
