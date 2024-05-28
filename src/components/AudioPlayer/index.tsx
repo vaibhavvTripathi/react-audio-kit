@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import "../../index.css";
 import disc from "../AudioPlayer/disc.png";
 import {
   ActionButton,
@@ -14,8 +15,7 @@ import {
 } from "./childComponents";
 import { useCurrentPLayback } from "./hooks";
 import { Audio, CurrentPlaybackStateType } from "./types";
-import "../../index.css";
-interface AudioPlayerProps {
+interface PlaylistManagerProps {
   audios: Array<Audio>;
   getCurrentPlayback?: (
     currentPlayback: CurrentPlaybackStateType & {
@@ -47,7 +47,7 @@ type Theme = {
   shadow?: boolean;
 };
 
-export const AudioPlayer = ({
+export const PlaylistManager = ({
   audios,
   getCurrentPlayback,
   defaultPlayback,
@@ -60,7 +60,7 @@ export const AudioPlayer = ({
   onClickSubtitle,
   onClickTitle,
   borderRadius,
-}: AudioPlayerProps) => {
+}: PlaylistManagerProps) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const {
     handleLoading,
@@ -85,6 +85,7 @@ export const AudioPlayer = ({
       });
     }
   }, [currentPlaybackState, bufferedPercentage]);
+  
   if (audios.length === 0) {
     return (
       <div className="mx-auto">{"Uh..ohh no media files present :("} </div>

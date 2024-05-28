@@ -41,7 +41,7 @@ This component provides you a simplest way to handle your playlists and gives yo
 
 #### Preview
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./src/assets/player.png)
 
 #### Usage
 
@@ -54,7 +54,17 @@ import "react-audio-kit/style.css"; // don't forget to import the styles from th
 export default function Home() {
   return (
     <>
-      <AudioPlayer audios={audios} />
+      <AudioPlayer
+        theme={{   /// this is a optional prop, mostly for the customization
+          baseMediaButtonColor: "#FF69B4",
+          hoveredMediaButtonColor: "#FF1493",
+          mediaIconColor: "white",
+          text: "black",
+          loaderColor: "pink",
+          shadow: true,
+        }}
+        audios={audios}
+      />
     </>
   );
 }
@@ -141,7 +151,14 @@ This component provides you a simplest way to your own voice in a well abstracte
 
 #### Preview
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+Stopped Recording 
+![App Screenshot](./src/assets/recorder_stopped.png)
+
+Recording
+![App Screenshot](./src/assets/recorder_recording.png)
+
+Paused
+![App Screenshot](./src/assets/recorder_recording.png)
 
 #### Usage
 

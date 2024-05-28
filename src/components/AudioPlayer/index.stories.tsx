@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {AudioPlayer} from ".";
+import { PlaylistManager } from ".";
 // import ncs from "../../ncs.mp3";
 
-const meta: Meta<typeof AudioPlayer> = {
+const meta: Meta<typeof PlaylistManager> = {
   title: "Components/AudioPlayer",
-  component: AudioPlayer,
+  component: PlaylistManager,
   parameters: {
     layout: "centered",
   },
@@ -17,11 +17,11 @@ const audioData = [
     img: undefined,
     subheading: "Subtitle 2",
   },
-  // {
-  //   src: "https://ucarecdn.com/92025d67-677-4148-8284-2d7e03306d4c/detroitkeys.mp3",
-  //   img: "https://sm.mashable.com/t/mashable_in/photo/default/arijit-singh-copy_ddzh.1248.jpg",
-  //   subheading: "Subtitle 1",
-  // },
+  {
+    src: "https://ucarecdn.com/92025d67-677-4148-8284-2d7e03306d4c/detroitkeys.mp3",
+    img: "https://sm.mashable.com/t/mashable_in/photo/default/arijit-singh-copy_ddzh.1248.jpg",
+    subheading: "Subtitle 1",
+  },
   // {
   //   src: ncs,
   //   img: "https://i.ndtvimg.com/i/2015-07/aa_640x480_81435810676.jpg",
