@@ -1,6 +1,6 @@
 {
   "name": "react-audio-kit",
-  "version": "0.2.01",
+  "version": "0.2.02",
   "description": "A UI library for audio components in React",
   "type": "module",
   "files": [
