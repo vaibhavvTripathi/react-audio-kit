@@ -46,7 +46,6 @@ export const AudioRecorder = ({
   const audioChunksRef = useRef<Array<Blob>>([]);
   const audioAnalyser = useAudioAnalyser(mediaRecorderRef, isRecording);
   const averageDecibels = useDecibles(audioAnalyser, isRecording);
-  console.log(isRecording, isPaused, averageDecibels);
   const handleStartRecording = () => {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
@@ -114,7 +113,6 @@ export const AudioRecorder = ({
       setIsPaused(false);
     }
   };
-  console.log(senstivity);
   return (
     <div>
       <div className="flex flex-col items-center gap-2">

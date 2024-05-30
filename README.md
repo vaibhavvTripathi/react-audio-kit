@@ -1,6 +1,9 @@
 # react-audio-kit
 
 react-audio-kit is a react ui library that contains the web based audio components in a well abstracted form.
+## Documentation
+
+For well defined [documentation]("https://rak-docs.vercel.app/") and quick hands-on please refer this.
 
 ## Installation
 
