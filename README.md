@@ -32,7 +32,7 @@ In case, you are using typescript for development, make sure to do following cha
 
 react-audio-kit comes with the following components :
 
-### Audio Player :
+### Playlist manager :
 
 This component provides you a simplest way to handle your playlists and gives you various features like :
 
@@ -48,7 +48,7 @@ This component provides you a simplest way to handle your playlists and gives yo
 
 #### Usage
 
-By default, this queue-player takes the list of audios to play and internally manages the states of the queue.
+By default, this playlist-manager takes the list of audios to play and internally manages the states of the queue.
 
 ```javascript
 import { PlaylistManager } from "react-audio-kit"; // import the components from library
@@ -87,7 +87,7 @@ const audios = [
 
 #### API
 
-You can customize and use the AudioPlayer using following props :
+You can customize and use the Playlist Manager using following props :
 
 | Prop                 | Type                                                                                            | Description                                                                                               | Default  |
 | -------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
@@ -95,31 +95,31 @@ You can customize and use the AudioPlayer using following props :
 | `getCurrentPlayback` | `(currentPlayback: CurrentPlaybackStateType & { bufferedProgressPercentage: number; }) => void` | A callback function that provides the current playback state, including the buffered progress percentage. | -        |
 | `defaultPlayback`    | `CurrentPlaybackStateType`                                                                      | An object defining the default playback state.                                                            | -        |
 | `preload`            | `"auto" \| "metadata" \| "none"`                                                                | Specifies if and how the audio should be preloaded.                                                       | `"auto"` |
-| `theme`              | `Theme`                                                                                         | An object to customize the appearance of the audio player. See the `Theme` section below for details.     | -        |
+| `theme`              | `Theme`                                                                                         | An object to customize the appearance of the playlist manager. See the `Theme` section below for details.     | -        |
 | `hideImg`            | `boolean`                                                                                       | If true, hides the audio cover image.                                                                     | `false`  |
 | `hideAudioName`      | `boolean`                                                                                       | If true, hides the audio name.                                                                            | `false`  |
 | `hideLoopIcon`       | `boolean`                                                                                       | If true, hides the loop icon.                                                                             | `false`  |
 | `onClickImage`       | `() => void`                                                                                    | A callback function triggered when the audio cover image is clicked.                                      | -        |
 | `onClickTitle`       | `() => void`                                                                                    | A callback function triggered when the audio title is clicked.                                            | -        |
 | `onClickSubtitle`    | `() => void`                                                                                    | A callback function triggered when the audio subtitle is clicked.                                         | -        |
-| `borderRadius`       | `number`                                                                                        | Sets the border radius of the audio player.                                                               | -        |
+| `borderRadius`       | `number`                                                                                        | Sets the border radius of the playlist manager.                                                               | -        |
 
 #### Theme
 
-The `theme` object allows customization of the audio player's appearance:
+The `theme` object allows customization of the playlist manager's appearance:
 
 | Property                    | Type      | Description                                           | Default |
 | --------------------------- | --------- | ----------------------------------------------------- | ------- |
 | `baseMediaButtonColor`      | `string`  | Color of the media buttons.                           | -       |
 | `hoveredMediaButtonColor`   | `string`  | Color of the media buttons when hovered.              | -       |
 | `mediaIconColor`            | `string`  | Color of the media icons.                             | -       |
-| `background`                | `string`  | Background color of the audio player.                 | -       |
+| `background`                | `string`  | Background color of the playlist manager.                 | -       |
 | `text`                      | `string`  | Text color.                                           | -       |
 | `loaderColor`               | `string`  | Color of the loading spinner.                         | -       |
 | `baseControlButtonColor`    | `string`  | Color of the control buttons.                         | -       |
 | `hoveredControlButtonColor` | `string`  | Color of the control buttons when hovered.            | -       |
 | `controlButtonIconColor`    | `string`  | Color of the control button icons.                    | -       |
-| `shadow`                    | `boolean` | If true, applies a shadow effect to the audio player. | `false` |
+| `shadow`                    | `boolean` | If true, applies a shadow effect to the playlist manager. | `false` |
 
 #### Audio
 
